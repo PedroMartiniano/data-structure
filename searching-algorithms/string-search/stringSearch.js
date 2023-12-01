@@ -1,4 +1,4 @@
-function stringSearch(str, substr) { // precisa arrumar esse aqui
+function stringSearch(str, substr) { 
     if (str.length < substr.length) return 0
 
     let count = 0
@@ -15,6 +15,7 @@ function stringSearch(str, substr) { // precisa arrumar esse aqui
             }
 
         } else {
+            i -= j
             j = 0
         }
     }
@@ -22,7 +23,7 @@ function stringSearch(str, substr) { // precisa arrumar esse aqui
     return count
 }
 
-console.log(stringSearch('llolrie loled', 'lol'))
+console.log(stringSearch('llololrie loled', 'lol'))
 
 // -----------------------------------------------------------
 
@@ -45,4 +46,4 @@ function naiveSearch(long, short) {
     return total
 }
 
-console.log(naiveSearch('llolorie loled', 'lol'))
+console.log(naiveSearch('llololrie loled', 'lol'))
