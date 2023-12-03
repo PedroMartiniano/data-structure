@@ -15,6 +15,7 @@ class SinglyLinkedList {
 
     push(val) {
         let newNode = new Node(val)
+
         if (!this.head) {
             this.head = newNode
             this.tail = this.head
@@ -27,20 +28,44 @@ class SinglyLinkedList {
 
         return this
     }
+
+    pop() {
+        if (!this.head) return undefined
+
+        let current = this.head
+        let preTail = null
+
+        while (current.next) {
+            preTail = current
+            current = current.next
+        }
+
+        console.log(current)
+
+        if (this.length === 1) {
+            this.head = null
+            this.tail = null
+        } else {
+            this.tail = preTail
+            this.tail.next = null
+        }
+
+        this.length--
+
+        return current
+    }
 }
 
 let list = new SinglyLinkedList()
 
-console.log(list.push('teste'))
-console.log(list.push('teste2'))
-console.log(list.push('teste3'))
+list.push('teste')
+// list.push('teste2')
+// list.push('teste3')
 
-console.log(list.tail)
+// list.traverse()
 
-// let first = new Node('Hi')
-// first.next = new Node('There')
-// first.next.next = new Node('How')
-// first.next.next.next = new Node('Are')
-// first.next.next.next.next = new Node('You')
+console.log(list.pop())
 
-// console.log(first.next.next)
+console.log(list)
+
+// console.log(list.tail)
