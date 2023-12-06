@@ -1,6 +1,7 @@
 // Last think in must be the first think out
 
 // -------------------------------------------
+// using arrays
 
 // Must use push and pop together
 
@@ -13,8 +14,6 @@ stack.push('youtube')
 stack.pop()
 stack.pop()
 stack.pop()
-
-// -------------------------------------------
 
 // Must use unshift and shifit together (less efficiency)
 
